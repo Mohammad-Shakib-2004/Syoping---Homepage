@@ -1,0 +1,274 @@
+/* Fullscreen header container */
+header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background video styling */
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(70%);
+}
+
+/* Foreground content styling */
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    color: #c4fadb;
+}
+
+/* Enhanced styling for English text */
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #88ffee, #ffffff, #88ffee);
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropIn 4s ease-out forwards;
+}
+
+h1:hover {
+    transform: translateY(-60px);
+    text-shadow: 6px 6px 18px rgba(193, 171, 171, 0.48);
+}
+
+/* Enhanced styling for Korean text */
+h3 {
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #88ffee, #3cf3ad);
+    -webkit-background-clip: text;
+    color: transparent;
+
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+}
+
+h3:hover {
+    transform: translateX(60px);
+    text-shadow: 5px 5px 15px rgb(126, 198, 248);
+}
+
+/* Keyframe animations */
+@keyframes dropIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #ff7bb8, #28ffec);
+    padding: 10px 20px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 8px;
+    right: 2px;
+    width: 95.6%;
+    z-index: 2;
+    border-radius: 8px;
+}
+
+/* Left-side navigation links */
+.nav-left ul {
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-left ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Right-side options */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Search bar styling */
+.nav-right input[type="text"] {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 140px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+/* Icon styling for login and menu */
+.icon {
+    font-size: 1.2em;
+    color: #f3d43c;
+    text-decoration: none;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Section styling */
+section {
+    padding: 60px 15px;
+    text-align: center;
+    color: #333;
+    background-color: #f7f9fb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+section p, section ul {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    right: 1px;
+    width: 98.5%;
+    background-color: aliceblue;
+    color: #000000;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-top: 3px solid #ffffff;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-left ul {
+        gap: 10px;
+    }
+    .nav-right {
+        gap: 8px;
+    }
+    .nav-right input[type="text"] {
+        width: 100px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+}
+
+
+
+/* Dropdown styling for Items menu */
+.nav-left ul li {
+    position: relative;
+}
+
+.nav-left ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(241, 181, 211);
+    color: #2dffd8;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgb(9, 9, 9);
+    border-radius: 5px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.nav-left ul li .dropdown-content a {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9em;
+}
+
+.nav-left ul li .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Show dropdown on hover */
+.nav-left ul li:hover .dropdown-content {
+    display: flex;
+}
+
+
+
+/* Social media icons(Side by side) */
+.social-media {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.social-media li {
+    display: inline-block;
+}
